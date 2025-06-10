@@ -3978,6 +3978,10 @@
             "count": {
                 "doc": "該序列在完成之前應該重複多少遍。助於我上$stage、在$stage上移動或退出$stage。但在休息序列時,它就會被忽略,因為我可以永遠休息。 ",
                 "names": "計數"
+            },
+            "description": {
+                "doc": "$~對於無法觀看動畫的觀眾來說，這是一個可選的序列描述。",
+                "names": "$~描述"
             }
         },
         "Place": {
@@ -4337,7 +4341,9 @@
             },
             "button": {
                 "selectOutput": "在舞台上顯示此輸出",
-                "expandSequence": "展開此折疊的程式碼"
+                "expandSequence": "展開此折疊的程式碼",
+                "expandControls": "$~显示附加编辑命令",
+                "collapseControls": "$~隐藏附加编辑命令"
             },
             "field": {
                 "name": {
