@@ -3,6 +3,54 @@
 We'll note all notable changes in this file, including bug fixes, enhancements, and all closed issues.
 Dates are in `YYYY-MM-DD` format and versions are in [semantic versioning](http://semver.org/) format.
 
+## 0.6.20
+
+## Added
+
+- Fixed #810, implementing responsive layout for mobile and tablets.
+
+## Fixed
+
+- Clarified tooltips for save status.
+- More robust node replacement when source isn't found.
+- Consistent mono locale emojis.
+- Unset locale after translating project.
+- Don't translate texts that are supposed to be one of a literal text type.
+
+## Maintenance
+
+- Updated Svelte, SvelteKit, vite, prettier
+- Removed eslint (it was unused)
+
+## 0.6.19
+
+## Added
+
+- Fixed #536: More discoverable tooltips.
+
+## Fixed
+
+- Fixed #792: Broken links to node concepts in guide.
+- Fixed #805: Clarify meaning of camera and microphone chooser.
+- Fixed several defects in how to translation, respecting file and markup structure.
+- Ensure code examples are localized.
+- Fixed #801: Slightly more visible concept link underlines, consistent with other links.
+- Fixed #751: Corrected inconsistency in simplified Chinese locale login screen.
+- Fixed #803: Adjusted behavior of code examples in standalone guide.
+- Fixed name of Noto Korean font file.
+- Fixed #746: Typo in Korean tutorial.
+- Fixed #688: Added aria-label to editor textarea.
+- Fixed concept link font size in Safari.
+- Fixed #338: Reference formatted literals in `Phrase` docs.
+- Fixed #328: Finished localizing moderation page.
+- Fixed #744: Clarifying output locale drop down.
+
+## Maintenance
+
+- Updated Playwright, Svelte, SvleteKit, eslint, firebase, tsx, vitest, zod, nodemailer, firebase admin, Google Translate.
+- Added timeline toolbar tests.
+- Better chunking of build for faster load times.
+
 ## 0.6.18
 
 ## Added

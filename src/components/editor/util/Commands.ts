@@ -114,6 +114,8 @@ export type CommandContext = {
     resetInputs?: () => void;
     help?: () => void;
     getTokenViews?: () => HTMLElement[];
+    /** Function to clear large deletion notification */
+    clearLargeDeletionNotification?: () => void;
 };
 
 export type Edit = Caret | Revision;
@@ -201,6 +203,7 @@ function handleInsert(context: CommandContext, symbol: string) {
 }
 
 export const ShowKeyboardHelp: Command = {
+    uiid:'1',
     symbol: '⌨️',
     description: (l) => l.ui.project.help,
     visible: Visibility.Invisible,
@@ -219,6 +222,7 @@ export const ShowKeyboardHelp: Command = {
 };
 
 export const IncrementLiteral: Command = {
+    uiid:'2',
     symbol: '+',
     description: (l) => l.ui.source.cursor.incrementLiteral,
     visible: Visibility.Touch,
@@ -231,9 +235,12 @@ export const IncrementLiteral: Command = {
     active: ({ caret }) =>
         caret ? caret.getAdjustableLiteral() !== undefined : false,
     execute: ({ caret }) => caret?.adjustLiteral(undefined, 1) ?? false,
+
+
 };
 
 export const DecrementLiteral: Command = {
+    uiid:'3',
     symbol: '–',
     description: (l) => l.ui.source.cursor.decrementLiteral,
     visible: Visibility.Touch,
@@ -249,6 +256,7 @@ export const DecrementLiteral: Command = {
 };
 
 export const StepBack: Command = {
+    uiid:'4',
     symbol: '←',
     description: (l) => l.ui.timeline.button.backStep,
     visible: Visibility.Visible,
@@ -268,6 +276,7 @@ export const StepBack: Command = {
 };
 
 export const StepForward: Command = {
+    uiid:'5',
     symbol: '→',
     description: (l) => l.ui.timeline.button.forwardStep,
     visible: Visibility.Visible,
@@ -287,6 +296,7 @@ export const StepForward: Command = {
 };
 
 export const StepBackInput: Command = {
+    uiid:'6',
     symbol: '⇠',
     description: (l) => l.ui.timeline.button.backInput,
     visible: Visibility.Visible,
@@ -301,6 +311,7 @@ export const StepBackInput: Command = {
 };
 
 export const StepForwardInput: Command = {
+    uiid:'7',
     symbol: '⇢',
     description: (l) => l.ui.timeline.button.forwardInput,
     visible: Visibility.Visible,
@@ -315,6 +326,7 @@ export const StepForwardInput: Command = {
 };
 
 export const StepBackNode: Command = {
+    uiid:'8', 
     symbol: '•←',
     description: (l) => l.ui.timeline.button.backNode,
     visible: Visibility.Visible,
@@ -336,6 +348,7 @@ export const StepBackNode: Command = {
 };
 
 export const StepForwardNode: Command = {
+    uiid:'9', 
     symbol: '⇢•',
     description: (l) => l.ui.timeline.button.forwardNode,
     visible: Visibility.Visible,
@@ -375,6 +388,7 @@ export const Restart: Command = {
 };
 
 export const StepToStart: Command = {
+    uiid:'11',
     symbol: '⇤',
     description: (l) => l.ui.timeline.button.start,
     visible: Visibility.Visible,
@@ -391,6 +405,7 @@ export const StepToStart: Command = {
 };
 
 export const StepToPresent: Command = {
+    uiid:'11',
     symbol: '⇥',
     description: (l) => l.ui.timeline.button.present,
     visible: Visibility.Visible,
@@ -407,6 +422,7 @@ export const StepToPresent: Command = {
 };
 
 export const StepOut: Command = {
+    uiid:'12',
     symbol: '↑',
     description: (l) => l.ui.timeline.button.out,
     visible: Visibility.Visible,
@@ -427,6 +443,7 @@ export const StepOut: Command = {
 };
 
 export const Play: Command = {
+    uiid:'13',
     symbol: '▶',
     description: (l) => l.ui.timeline.button.play,
     visible: Visibility.Visible,
@@ -443,6 +460,7 @@ export const Play: Command = {
 };
 
 export const Pause: Command = {
+    uiid:'14',
     symbol: '⏸',
     description: (l) => l.ui.timeline.button.pause,
     visible: Visibility.Visible,
@@ -459,6 +477,7 @@ export const Pause: Command = {
 };
 
 export const ShowMenu: Command = {
+    uiid:'15', 
     symbol: '▾',
     description: (l) => l.ui.source.menu.show,
     visible: Visibility.Visible,
@@ -477,6 +496,7 @@ export const ShowMenu: Command = {
 };
 
 export const EnterFullscreen: Command = {
+    uiid:'16',
     symbol: '▶️',
     description: (l) => l.ui.tile.toggle.fullscreen.off,
     visible: Visibility.Invisible,
@@ -494,6 +514,7 @@ export const EnterFullscreen: Command = {
 };
 
 export const ExitFullscreen: Command = {
+    uiid:'17', 
     symbol: EDIT_SYMBOL,
     description: (l) => l.ui.tile.toggle.fullscreen.on,
     visible: Visibility.Invisible,
@@ -512,6 +533,7 @@ export const ExitFullscreen: Command = {
 };
 
 export const FocusOutput: Command = {
+    uiid:'18',
     symbol: STAGE_SYMBOL,
     description: (l) => l.ui.project.button.focusOutput,
     visible: Visibility.Invisible,
@@ -529,6 +551,7 @@ export const FocusOutput: Command = {
 };
 
 export const FocusSource: Command = {
+    uiid:'19',
     symbol: SOURCE_SYMBOL,
     description: (l) => l.ui.project.button.focusSource,
     visible: Visibility.Invisible,
@@ -547,6 +570,7 @@ export const FocusSource: Command = {
 };
 
 export const FocusDocs: Command = {
+    uiid: '20', 
     symbol: DOCUMENTATION_SYMBOL,
     description: (l) => l.ui.project.button.focusDocs,
     visible: Visibility.Invisible,
@@ -565,6 +589,7 @@ export const FocusDocs: Command = {
 };
 
 export const FocusPalette: Command = {
+    uiid: '21', // Added uuid
     symbol: PALETTE_SYMBOL,
     description: (l) => l.ui.project.button.focusPalette,
     visible: Visibility.Invisible,
@@ -619,6 +644,8 @@ export const ToggleBlocks: Command = {
 };
 
 /** The command to rule them all... inserts things during text editing mode. */
+
+
 export const InsertSymbol: Command = {
     symbol: 'a',
     description: (l) => l.ui.source.cursor.type,
@@ -649,8 +676,10 @@ export const Undo: Command = {
         database.Projects.getHistory(
             evaluator.project.getID(),
         )?.isUndoable() === true,
-    execute: ({ database, evaluator }) => {
+    execute: ({ database, evaluator, clearLargeDeletionNotification }) => {
         database.Projects.undoRedo(evaluator.project.getID(), -1);
+        // Clear large deletion notification when user undoes
+        clearLargeDeletionNotification?.();
         // Always swallow the shortcut to avoid the browser or OS from handling it.
         return true;
     },

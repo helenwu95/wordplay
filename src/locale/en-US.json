@@ -3488,12 +3488,13 @@
                 "Hello, hello! Remember me? How could anyone forget /me/. That's right, I am the manificent @Phrase, ready to represent the loveliest of @Text on @Stage.",
                 "Just make me like this, and I'll appear on @Stage:",
                 "\\Phrase('magnificient!')\\",
-                "I need some @Text, obviously, but otherwise, I can do everything a @Output can do, including changing my size, font, rotation, and do all of my incredible dances with @Pose and @Sequence.",
+                "I need @TextLiteral or @FormattedLiteral to show. With @FormattedLiteral, I can use things like \\`*bold* and /italic/`\\ or refer to custom @ConceptLink you create.",
+                "You can also optionally give me everything an @Output can do, including changing my size, font, rotation, and do all of my incredible dances with @Pose and @Sequence.",
                 "You can also select me on @Stage and edit me on the palette next door."
             ],
             "names": ["💬", "Phrase"],
             "text": {
-                "doc": "The characters to show on @Stage, in plain text or @FormattedLiteral.",
+                "doc": "The characters to show on @Stage, a @TextLiteral or @FormattedLiteral.",
                 "names": "text"
             },
             "size": {
@@ -4267,6 +4268,8 @@
                 "focusDocs": "focus on the documentation",
                 "focusPalette": "focus on the palette",
                 "focusCycle": "focus on the next tile",
+                "savedLocally": "projects are saved locally, but not online",
+                "savedOnline": "projects are saved online",
                 "unsaved": "show save error",
                 "translate": {
                     "tip": "edit this project's languages and translate it into other languages.",
@@ -4476,7 +4479,8 @@
                 "redo": "redo undone edit",
                 "search": "search for special characters to insert",
                 "tidy": "tidy spacing",
-                "elide": "toggle elision"
+                "elide": "toggle elision",
+                "largeDelete": "Are you sure you want to delete this selection? You can use the undo button (↺) if you change your mind."
             },
             "error": {
                 "invalidName": "This must be a valid Wordplay name.",
@@ -4522,7 +4526,8 @@
                 "submit": "submit this chat message"
             },
             "options": {
-                "locale": "preferred language for output"
+                "locale": "preferred language for output",
+                "default": "default"
             }
         },
         "timeline": {
@@ -4624,7 +4629,7 @@
                 "button": {
                     "submit": "Share the project with this email address",
                     "sensitive": {
-                        "tip": "Mark this text as sensitive again",
+                        "tip": "mark this text as sensitive again",
                         "label": "sensitive"
                     }
                 },
@@ -4641,7 +4646,14 @@
                 "mode": {
                     "layout": {
                         "label": "layout",
-                        "modes": ["automatic", "horizontal", "vertical", "free"]
+                        "modes": [
+                            "lay out tiles automatically",
+                            "a horizontal screen layout",
+                            "a vertical screen layout",
+                            "two most recent tiles, side by side",
+                            "only the most recent tile",
+                            "moveable and resizable tiles on a canvas"
+                        ]
                     },
                     "animate": {
                         "label": "animations",
@@ -4690,7 +4702,8 @@
                 "options": {
                     "face": "font face",
                     "mic": "selected microphone",
-                    "camera": "selected camera"
+                    "camera": "selected camera",
+                    "default": "default"
                 }
             },
             "locale": {
@@ -4724,7 +4737,7 @@
                 "button": {
                     "show": "Show the feedback form.",
                     "submit": {
-                        "tip": "Submit your feeback.",
+                        "tip": "submit your feeback",
                         "label": "submit"
                     },
                     "delete": {
@@ -4734,11 +4747,11 @@
                     "like": "Like this feedback",
                     "close": {
                         "label": "close",
-                        "tip": "Close this feedback as a moderator"
+                        "tip": "close this feedback as a moderator"
                     },
                     "comment": {
                         "label": "submit",
-                        "tip": "Submit comment on this feedback."
+                        "tip": "submit comment on this feedback."
                     }
                 },
                 "mode": {
@@ -4801,11 +4814,11 @@
             "button": {
                 "submit": {
                     "label": "send",
-                    "tip": "Send a message to your collaborators"
+                    "tip": "send a message to your collaborators"
                 },
                 "start": {
                     "label": "start a chat",
-                    "tip": "Begin a discussion with yourself or others."
+                    "tip": "begin a discussion with yourself or others."
                 },
                 "delete": "delete this message"
             },
@@ -5001,7 +5014,7 @@
                     },
                     "generate": {
                         "label": "generate",
-                        "tip": "Create usernames and passwords based on the information above."
+                        "tip": "create usernames and passwords based on the information above."
                     },
                     "edit": {
                         "label": "edit",
@@ -5009,7 +5022,7 @@
                     },
                     "submit": {
                         "label": "create class",
-                        "tip": "Create a new class with this information."
+                        "tip": "create a new class with this information."
                     }
                 },
                 "error": {
@@ -5050,7 +5063,7 @@
                     },
                     "addteacher": "Add a teacher to this class",
                     "delete": {
-                        "tip": "Delete this class forever.",
+                        "tip": "delete this class forever",
                         "label": "Delete this class"
                     }
                 },
@@ -5109,7 +5122,7 @@
                 "button": {
                     "more": {
                         "label": "more...",
-                        "tip": "Load more galleries"
+                        "tip": "load more galleries"
                     }
                 }
             },
@@ -5120,7 +5133,7 @@
                     "new": "Create a new character",
                     "copy": "Copy this character",
                     "remove": {
-                        "tip": "Delete this character",
+                        "tip": "delete this character",
                         "prompt": "delete?"
                     }
                 },
@@ -5231,59 +5244,59 @@
                 "button": {
                     "back": {
                         "label": "back",
-                        "tip": "Move selected shapes behind."
+                        "tip": "move selected shapes behind."
                     },
                     "toBack": {
                         "label": "to back",
-                        "tip": "Move selected shapes to the back."
+                        "tip": "move selected shapes to the back."
                     },
                     "forward": {
                         "label": "forward",
-                        "tip": "Move selected shapes in front."
+                        "tip": "move selected shapes in front."
                     },
                     "toFront": {
                         "label": "to front",
-                        "tip": "Move selected shapes to the front."
+                        "tip": "move selected shapes to the front."
                     },
                     "copy": {
                         "label": "copy",
-                        "tip": "Copy selected shapes to clipboard."
+                        "tip": "copy selected shapes to clipboard."
                     },
                     "paste": {
                         "label": "paste",
-                        "tip": "Paste copied shapes from clipboard."
+                        "tip": "paste copied shapes from clipboard."
                     },
                     "clear": {
                         "label": "all",
-                        "tip": "Remove all shapes."
+                        "tip": "remove all shapes."
                     },
                     "clearPixels": {
                         "label": "pixels",
-                        "tip": "Remove all pixels."
+                        "tip": "remove all pixels."
                     },
                     "undo": {
                         "label": "undo",
-                        "tip": "Undo to the previous design"
+                        "tip": "undo to the previous design"
                     },
                     "redo": {
                         "label": "redo",
-                        "tip": "Redo to the next design"
+                        "tip": "redo to the next design"
                     },
                     "all": {
                         "label": "select all",
-                        "tip": "Select all shapes and pixels"
+                        "tip": "select all shapes and pixels"
                     },
                     "end": {
                         "label": "finish shape",
-                        "tip": "End the current path"
+                        "tip": "end the current path"
                     },
                     "horizontal": {
                         "label": "flip horizontal",
-                        "tip": "flip the points horizontally around the center "
+                        "tip": "flip the points horizontally around the center"
                     },
                     "vertical": {
                         "label": "flip vertical",
-                        "tip": "flip the points vertically around the center "
+                        "tip": "flip the points vertically around the center"
                     },
                     "fit": {
                         "label": "fit",
@@ -5474,7 +5487,8 @@
             "wrap": "parentheize",
             "unwrap": "unwrap",
             "bind": "name this expression",
-            "show": "… show more"
+            "show": "… show more",
+            "area": "type code"
         },
         "template": {
             "unwritten": "TBD",
@@ -5505,15 +5519,20 @@
             "misinformation": "Contain false, misleading, deceptive, or manipulative information"
         },
         "progress": "*$1* moderated, *$2* remaining",
+        "done": "Nothing else to moderate!",
         "button": {
             "submit": {
-                "tip": "Save these moderation settings",
+                "tip": "save these moderation settings",
                 "label": "save"
             },
             "skip": {
-                "tip": "Skip this project",
+                "tip": "skip this project",
                 "label": "skip"
-            }
+            },
+            "property": "Whether the project has this property"
+        },
+        "error": {
+            "notmod": "It looks like you're not a moderator. If you were recently given moderator privileges, you may need to login again. If not, see the wiki for how to request moderation privileges."
         }
     },
     "gallery": {

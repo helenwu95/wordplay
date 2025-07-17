@@ -1,5 +1,6 @@
 <script lang="ts">
     import Options from '@components/widgets/Options.svelte';
+    import { locales } from '@db/Database';
     import type Locale from '@locale/Locale';
     import { localeToString, stringToLocale } from '@locale/Locale';
     import {
@@ -7,7 +8,6 @@
         getLocaleRegionNames,
     } from '@locale/LocaleText';
     import { LOCALE_SYMBOL } from '@parser/Symbols';
-    import { withMonoEmoji } from '../../unicode/emoji';
 
     interface Props {
         localesUsed?: Locale[];
@@ -20,7 +20,7 @@
 
 <!-- svelte-ignore a11y_label_has_associated_control -->
 <label class="output-locale"
-    >{withMonoEmoji(LOCALE_SYMBOL)}
+    >{LOCALE_SYMBOL}
     <Options
         id="output-locale"
         value={locale === undefined ? undefined : localeToString(locale)}
@@ -29,7 +29,7 @@
         options={[
             {
                 value: undefined,
-                label: '—',
+                label: $locales.get((l) => l.ui.output.options.default),
             },
             ...localesUsed.map((l) => {
                 const locale = localeToString(l);

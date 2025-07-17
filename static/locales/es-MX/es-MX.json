@@ -4257,7 +4257,9 @@
                 "history": {
                     "on": "$~mostrar código de proyecto reciente",
                     "off": "$~mostrar el código del proyecto actual"
-                }
+                },
+                "savedLocally": "$~Los proyectos se guardan localmente, pero no en línea",
+                "savedOnline": "$~Los proyectos se guardan en línea"
             },
             "field": {
                 "name": {
@@ -4434,7 +4436,8 @@
                 "expandBeforeInline": "$~ampliar la selección antes",
                 "expandAfterInline": "$~ampliar la selección después",
                 "expandPriorLine": "$~ampliar la selección a la línea anterior",
-                "expandNextLine": "$~ampliar la selección a la siguiente línea"
+                "expandNextLine": "$~ampliar la selección a la siguiente línea",
+                "largeDelete": "$~¿Seguro que desea eliminar esta selección? Puede usar el botón deshacer (↺) si cambia de opinión."
             },
             "options": {
                 "locale": {
@@ -4486,7 +4489,8 @@
                 "submit": "enviar este mensaje de chat"
             },
             "options": {
-                "locale": "$~elegir el idioma de salida"
+                "locale": "$~elegir el idioma de salida",
+                "default": "$~por defecto"
             }
         },
         "timeline": {
@@ -4606,10 +4610,12 @@
                     "layout": {
                         "label": "diseño",
                         "modes": [
-                            "automático",
-                            "horizontal",
-                            "vertical",
-                            "libre"
+                            "$~disponer los mosaicos automáticamente",
+                            "$~un diseño de pantalla horizontal",
+                            "$~un diseño de pantalla vertical",
+                            "$~Los dos mosaicos más recientes, uno al lado del otro",
+                            "$~solo el mosaico más reciente",
+                            "$~mosaicos móviles y redimensionables en un lienzo"
                         ]
                     },
                     "animate": {
@@ -4656,7 +4662,8 @@
                 "options": {
                     "mic": "micrófono seleccionado",
                     "camera": "cámara seleccionada ",
-                    "face": "$~tipo de fuente"
+                    "face": "$~tipo de fuente",
+                    "default": "$~por defecto"
                 }
             },
             "locale": {
@@ -5402,7 +5409,8 @@
             "unwrap": "desenvolver",
             "bind": "nombrar esta expresión",
             "range": "$~Selección desde $1 a $2",
-            "show": "$~… mostrar más"
+            "show": "$~… mostrar más",
+            "area": "$~código de tipo"
         },
         "template": {
             "unwritten": "Por determinar",
@@ -5495,7 +5503,12 @@
             "skip": {
                 "tip": "Omitir este proyecto",
                 "label": "omitir"
-            }
+            },
+            "property": "$~Si el proyecto tiene esta propiedad"
+        },
+        "done": "$~¡Nada más que moderar!",
+        "error": {
+            "notmod": "$~Parece que no eres moderador. Si recientemente te dieron privilegios de moderador, quizás tengas que volver a iniciar sesión. De lo contrario, consulta la wiki para saber cómo solicitarlos."
         }
     },
     "gallery": {

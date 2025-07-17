@@ -4274,7 +4274,9 @@
                 "history": {
                     "on": "$~Aktuellen Projektcode anzeigen",
                     "off": "$~aktuellen Projektcode anzeigen"
-                }
+                },
+                "savedLocally": "$~Projekte werden lokal, aber nicht online gespeichert",
+                "savedOnline": "$~Projekte werden online gespeichert"
             },
             "field": {
                 "name": {
@@ -4451,7 +4453,8 @@
                 "expandBeforeInline": "$~Auswahl erweitern vor",
                 "expandAfterInline": "$~Auswahl erweitern nach",
                 "expandPriorLine": "$~Auswahl bis zur vorherigen Zeile erweitern",
-                "expandNextLine": "$~Auswahl bis zur nächsten Zeile erweitern"
+                "expandNextLine": "$~Auswahl bis zur nächsten Zeile erweitern",
+                "largeDelete": "$~Möchten Sie diese Auswahl wirklich löschen? Sie können die Auswahl mit dem Rückgängig-Button (↺) rückgängig machen."
             },
             "options": {
                 "locale": {
@@ -4503,7 +4506,8 @@
                 "submit": "$~diese Chat-Nachricht senden"
             },
             "options": {
-                "locale": "$~Wählen Sie die Sprache für die Ausgabe"
+                "locale": "$~Wählen Sie die Sprache für die Ausgabe",
+                "default": "$~Standard"
             }
         },
         "timeline": {
@@ -4623,10 +4627,12 @@
                     "layout": {
                         "label": "$~Layout",
                         "modes": [
-                            "$~automatisch",
-                            "$~horizontal",
-                            "$~Vertikale",
-                            "$~frei"
+                            "$~Kacheln automatisch auslegen",
+                            "$~ein horizontales Bildschirmlayout",
+                            "$~ein vertikales Bildschirmlayout",
+                            "$~die beiden aktuellsten Kacheln nebeneinander",
+                            "$~nur die aktuellste Kachel",
+                            "$~verschiebbare und in der Größe veränderbare Kacheln auf einer Leinwand"
                         ]
                     },
                     "animate": {
@@ -4676,7 +4682,8 @@
                 "options": {
                     "mic": "$~ausgewähltes Mikrofon",
                     "camera": "$~ausgewählte Kamera",
-                    "face": "$~Schriftart"
+                    "face": "$~Schriftart",
+                    "default": "$~Standard"
                 }
             },
             "locale": {
@@ -5422,7 +5429,8 @@
             "unwrap": "$~auspacken",
             "bind": "$~Nennen Sie diesen Ausdruck",
             "range": "$~Auswahl von $1 bis $2",
-            "show": "$~… mehr anzeigen"
+            "show": "$~… mehr anzeigen",
+            "area": "$~Typenschlüssel"
         },
         "template": {
             "unwritten": "$~Wird noch bekannt gegeben",
@@ -5515,7 +5523,12 @@
             "skip": {
                 "tip": "$~Dieses Projekt überspringen",
                 "label": "$~überspringen"
-            }
+            },
+            "property": "$~Ob das Projekt diese Eigenschaft hat"
+        },
+        "done": "$~Sonst nichts zu moderieren!",
+        "error": {
+            "notmod": "$~Offenbar bist du kein Moderator. Falls du erst kürzlich Moderatorrechte erhalten hast, musst du dich möglicherweise erneut anmelden. Falls nicht, findest du im Wiki Informationen zum Beantragen von Moderationsrechten."
         }
     },
     "gallery": {

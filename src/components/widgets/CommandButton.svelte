@@ -12,7 +12,6 @@
         getProjectCommandContext,
     } from '../project/Contexts';
     import Button from './Button.svelte';
-    import CommandHint from './CommandHint.svelte';
 
     interface Props {
         /** If source ID isn't provided, then the one with focus is used. */
@@ -97,7 +96,7 @@
                 );
         }
     }}
-    ><CommandHint {command} />{#if token}<TokenView
+    >{#if token}<TokenView
             node={tokenize(command.symbol).getTokens()[0]}
         />{:else if /^\p{Extended_Pictographic}+$/u.test(command.symbol)}<Emoji
             >{command.symbol}</Emoji

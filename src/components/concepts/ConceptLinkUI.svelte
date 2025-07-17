@@ -189,20 +189,21 @@
 <style>
     .conceptlink {
         display: inline-block;
-        font-style: normal;
+        font-style: var(--wordplay-font-size);
         text-align: start;
     }
 
     .conceptlink.interactive {
         text-decoration: underline;
         text-decoration-color: var(--wordplay-highlight-color);
-        text-decoration-thickness: var(--wordplay-border-width);
+        text-decoration-thickness: calc(var(--wordplay-focus-width) / 2);
     }
 
     :global(button):focus .conceptlink,
     .conceptlink.interactive:hover {
         cursor: pointer;
         text-decoration-thickness: var(--wordplay-focus-width);
+        text-decoration-color: var(--wordplay-focus-color);
     }
 
     :global(button):focus .conceptlink {

@@ -4275,7 +4275,9 @@
                 "history": {
                     "on": "$~son proje kodunu göster",
                     "off": "$~mevcut proje kodunu göster"
-                }
+                },
+                "savedLocally": "$~projeler yerel olarak kaydedilir, ancak çevrimiçi olarak kaydedilmez",
+                "savedOnline": "$~projeler çevrimiçi olarak kaydedilir"
             },
             "field": {
                 "name": {
@@ -4469,7 +4471,8 @@
                 "expandBeforeInline": "$~seçimi genişletmeden önce",
                 "expandAfterInline": "$~seçimi genişlet",
                 "expandPriorLine": "$~seçimi önceki satıra genişlet",
-                "expandNextLine": "$~seçimi bir sonraki satıra genişlet"
+                "expandNextLine": "$~seçimi bir sonraki satıra genişlet",
+                "largeDelete": "$~Bu seçimi silmek istediğinizden emin misiniz? Fikrinizi değiştirirseniz geri al düğmesini (↺) kullanabilirsiniz."
             },
             "options": {
                 "locale": {
@@ -4521,7 +4524,8 @@
                 "submit": "$~bu sohbet mesajını gönder"
             },
             "options": {
-                "locale": "$~çıktı için dili seçin"
+                "locale": "$~çıktı için dili seçin",
+                "default": "$~varsayılan"
             }
         },
         "timeline": {
@@ -4640,7 +4644,14 @@
                 "mode": {
                     "layout": {
                         "label": "$~düzen",
-                        "modes": ["$~otomatik", "$~yatay", "$~dikey", "$~özgür"]
+                        "modes": [
+                            "$~fayansları otomatik olarak yerleştir",
+                            "$~yatay ekran düzeni",
+                            "$~dikey ekran düzeni",
+                            "$~en son iki fayans, yan yana",
+                            "$~sadece en son fayans",
+                            "$~bir tuval üzerinde taşınabilir ve yeniden boyutlandırılabilir fayanslar"
+                        ]
                     },
                     "animate": {
                         "label": "$~animasyonlar",
@@ -4689,7 +4700,8 @@
                 "options": {
                     "face": "$~yazı tipi",
                     "mic": "$~seçili mikrofon",
-                    "camera": "$~seçili kamera"
+                    "camera": "$~seçili kamera",
+                    "default": "$~varsayılan"
                 }
             },
             "locale": {
@@ -5472,7 +5484,8 @@
             "unwrap": "$~açmak",
             "bind": "$~bu ifadeyi adlandırın",
             "range": "$~1$'dan $2'a kadar seçim",
-            "show": "$~… daha fazlasını göster"
+            "show": "$~… daha fazlasını göster",
+            "area": "$~tip kodu"
         },
         "template": {
             "unwritten": "$~Belirsiz",
@@ -5511,7 +5524,12 @@
             "skip": {
                 "tip": "$~Bu projeyi atla",
                 "label": "$~atlamak"
-            }
+            },
+            "property": "$~Projenin bu özelliğe sahip olup olmadığı"
+        },
+        "done": "$~Başka ölçülecek bir şey yok!",
+        "error": {
+            "notmod": "$~Moderatör olmadığınız anlaşılıyor. Yakın zamanda moderatör ayrıcalıkları verildiyse, tekrar oturum açmanız gerekebilir. Verilmediyse, moderasyon ayrıcalıklarının nasıl talep edileceğine dair wiki'ye bakın."
         }
     },
     "gallery": {

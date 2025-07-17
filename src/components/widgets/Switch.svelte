@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getTip } from '@components/project/Contexts';
     import { locales } from '@db/Database';
     import type { LocaleTextAccessor } from '@locale/Locales';
     import { withMonoEmoji } from '../../unicode/emoji';
@@ -25,6 +26,14 @@
 
     let onTipText = $derived($locales.get(onTip));
     let offTipText = $derived($locales.get(offTip));
+
+    let hint = getTip();
+    function showTip(view: HTMLSpanElement, tip: string) {
+        hint.show(tip, view);
+    }
+    function hideTip() {
+        hint.hide();
+    }
 </script>
 
 <span class="switch" data-uiid={uiid} class:on>
@@ -39,6 +48,16 @@
             event.stopPropagation();
             toggle(false);
         }}
+        onpointerenter={(event) =>
+            showTip(event.target as HTMLSpanElement, offTipText)}
+        onpointerleave={hideTip}
+        onfocus={(event) =>
+            showTip(event.target as HTMLSpanElement, offTipText)}
+        onblur={hideTip}
+        ontouchstart={(event) =>
+            showTip(event.target as HTMLSpanElement, offTipText)}
+        ontouchend={hideTip}
+        ontouchcancel={hideTip}
         onkeydown={(event) =>
             event.key === 'Enter' || event.key === ' '
                 ? toggle(false)
@@ -49,7 +68,11 @@
         aria-disabled={on}
         aria-label={onTipText}
         tabindex="0"
-        title={onTipText}
+        onpointerenter={(event) =>
+            showTip(event.target as HTMLSpanElement, onTipText)}
+        onpointerleave={hideTip}
+        onfocus={(event) => showTip(event.target as HTMLSpanElement, onTipText)}
+        onblur={hideTip}
         onclick={(event) => {
             event.stopPropagation();
             event.button === 0 ? toggle(true) : undefined;
